@@ -5,11 +5,21 @@ using UnityEngine;
 public class Skrzynia : MonoBehaviour
 {
 
-    public float force = 5.0f;
+    public float force = 10.0f;
+    Rigidbody rb;
 
     void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(0, 0, force, ForceMode.Impulse);
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        // sk³adowa y wektora prêdkoœci
+        if (rb.velocity.y == 0)
+        {
+            // dzia³amy si³¹ na cia³o A :)
+            rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+        }
     }
 }

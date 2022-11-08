@@ -157,7 +157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.1
   block: {fileID: 1644554469362693793, guid: 4a62e607dc61e6841b880cd30642ccc1, type: 3}
-  count: 30
+  count: 100
+  materials:
+  - {fileID: 2100000, guid: 7e1ad8c77a2a97146b4e18b5593ac7cb, type: 2}
+  - {fileID: 2100000, guid: 46ea75d829920c244a1dce539653c23e, type: 2}
+  - {fileID: 2100000, guid: b8116a09506986c479e025c0ace70e58, type: 2}
+  - {fileID: 2100000, guid: a71ab3fd46012f646a24ea0e2050b0f2, type: 2}
+  - {fileID: 2100000, guid: 0c985c6fa56904449ac269393c9fa572, type: 2}
 --- !u!64 &604467200
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -231,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 604467198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

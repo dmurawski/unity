@@ -46,10 +46,6 @@ public class MoveWithCharacterController : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody body = hit.collider.attachedRigidbody;
-        if (hit.gameObject.name == "platform")
-        {
-            Debug.Log("Wykryto kolizjê kostki z Character Controller");
-        }
         // no rigidbody
         if (body == null || body.isKinematic)
         {

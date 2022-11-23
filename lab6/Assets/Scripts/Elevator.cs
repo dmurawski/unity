@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Elevator : MonoBehaviour
 {
-    public bool canMove;
+    public bool canMove=false;
     public float speed;
     public int startPoint;
     public Transform[] points;
     int i;
     bool reverse;
+    public bool setparent = false;
 
     void Start()
     {
@@ -48,22 +50,16 @@ public class Elevator : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        collision.transform.SetParent(transform);
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        collision.transform.SetParent(null);
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player wszed³ na windê.");
-
-            canMove = true;
+            if (setparent == true)
+            {
+                other.transform.SetParent(transform);
+                canMove = true;
+            }
+            Debug.Log("rodzic ustawiony.");
         }
     }
 
@@ -72,8 +68,9 @@ public class Elevator : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player zszed³ z windy.");
+            Debug.Log("rodzic usuniety.");
+            other.transform.SetParent(null);
             canMove = false;
         }
     }
-
 }

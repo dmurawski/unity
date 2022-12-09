@@ -13,8 +13,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject newpipe = Instantiate(pipe);
-        //newpipe.transform.position = transform.position + new Vector3(0, Random.Range(minHeight, maxHeight),0);
+   
     }
 
     // Update is called once per frame
